@@ -42,7 +42,7 @@ namespace StructureThermodynamicsOverhaul.scripts
 
         public static void debugLogToChat(string message, bool forced)
         {
-            if (ConfigManager.Config_EnableDebugLogInChat || forced)
+            if (ConfigManager.Entry_DebugLogInChat.Value || forced)
             {
                 ConsoleWindow.Print("[STO]: " + message);
             }
@@ -105,7 +105,7 @@ namespace StructureThermodynamicsOverhaul.scripts
         [HarmonyPostfix]
         public static void onGameUpdateTick()
         {
-            if (ConfigManager.Config_EnableDebugHomeKey)
+            if (ConfigManager.Entry_DebugHomeKey.Value)
             {
                 //debugLogToChat("Test???");
 
@@ -220,7 +220,7 @@ namespace StructureThermodynamicsOverhaul.scripts
 
         private static void LogToFile(string text)
         {
-            if (ConfigManager.Config_EnableDebugLogInChat)
+            if (ConfigManager.Entry_DebugLogInChat.Value)
             {
                 string fn = "TestLogTest.txt";
                 try

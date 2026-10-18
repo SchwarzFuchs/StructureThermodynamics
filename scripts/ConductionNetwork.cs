@@ -1233,7 +1233,7 @@ namespace StructureThermodynamicsOverhaul.scripts
                 }
 
                 float Q = deltaT / totalR;
-                float totalEnergyLost = Q * simulateSeconds * (ConfigManager.Config_ThermalMultiplier / ThermalConstants.ThermalMultiplierOffset);
+                float totalEnergyLost = Q * simulateSeconds * (ConfigManager.Entry_ThermalRateMultiplier.Value / ThermalConstants.ThermalMultiplierOffset);
                 totalEnergyLost = conduit.isToAnotherRoom ? totalEnergyLost / 2.0f : totalEnergyLost;
 
                 //debug stuff
